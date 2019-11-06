@@ -1,0 +1,36 @@
+#div_add_from{
+    margin:0 auto;
+    width:70%;
+    height:100%;
+}
+
+.span_text{
+    display:inline-block;
+    width:200px;
+    text-align:right;
+}
+
+input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 400px;
+    height: 25px;
+}
+
+select{
+    margin-left: -5px;
+    width: 400px;
+    height: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btn{
+    margin-top: 10px;
+    margin-left: 34%;
+}
+
+textarea{
+    width: 400px;
+    height: 60px;
+}

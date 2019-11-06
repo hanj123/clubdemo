@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+
+    <link rel="stylesheet" href="../static/css/list.css" th:href="@{/css/list.css}">
+
+    <meta charset="UTF-8">
+    <title>俱乐部列表</title>
+
+    <script>
+    </script>
+
+</head>
+<body>
+
+<div>
+    <a href="#" th:href="@{/goAddPage}">新增</a>
+</div><br>
+
+<div id="div_table">
+
+    <table id="list_table">
+        <thead>
+        <tr>
+            <td style="display: none">俱乐部ID</td>
+            <td style="width: 180px">俱乐部名称</td>
+            <td style="width: 140px">俱乐部负责人</td>
+            <td style="width: 140px">俱乐部类型</td>
+            <td style="width: 140px">创建时间</td>
+            <td style="width: 140px">活动次数</td>
+            <td style="width: 140px">会员数量</td>
+            <td style="width: 140px">操作</td>
+        </tr>
+        </thead>
+        <tbody th:if="${clubList}">
+
+        <tr th:each="club : ${clubList}">
+            <td style="display: none" th:text="${club.clubId}">新点羽毛球俱乐部ID</td>
+            <td th:text="${club.clubName}">新点羽毛球俱乐部</td>
+            <td th:text="${club.clubPerson}">张三</td>
+            <td th:text="${club.clubTypeStr}">羽毛球</td>
+            <td th:text="${club.createTimeStr}">2019-03-02</td>
+            <td th:text="${club.activityTimes}">100</td>
+            <td th:text="${club.memberNumber}">5</td>
+            <td>
+                <a href="#" th:href="@{/goUpdatePage/{id}(id=${club.clubId})}">修改</a>
+                <a href="#" th:href="@{/delete/{id}(id=${club.clubId})}">删除</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<div th:if="${message}">
+    <h3 th:text="${message}"></h3>
+</div>
+
+</body>
+</html>

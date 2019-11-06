@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+
+    <link rel="stylesheet" href="../static/css/add.css" th:href="@{/css/add.css}">
+
+    <script src="../static/js/jquery-2.2.3.min.js" th:src="@{/js/jquery-2.2.3.min.js}"></script>
+    <script src="../static/js/laydate.dev.js" th:src="@{/js/laydate.dev.js}"></script>
+    <script src="../static/js/club_update.js" th:src="@{/js/club_update.js}"></script>
+
+    <meta charset="UTF-8">
+    <title>俱乐部增加页面</title>
+</head>
+<body>
+
+<div id="div_add_from">
+    <form action="#" th:Object="${club}" th:action="@{/update/{id}(id=${club.clubId})}" method="post">
+        <input type="hidden" name="clubId" th:value="*{clubId}" required><br>
+        <span class="span_text">俱乐部名称：</span><input type="text" onchange="checkClubName(this)" name="clubName" th:value="*{clubName}" required><br>
+        <span class="span_text">负责人： </span><input type="text" name="clubPerson" th:value="*{clubPerson}" required><br>
+        <span class="span_text">创建时间：</span><input type="text" name="createTimeStr" th:value="*{createTimeStr}" onfocus="this.blur();" required><br>
+        <span class="span_text">俱乐部类型：</span>
+        <select name="clubType" th:value="*{clubType}" style="width: 200px; background-color: #EEEEEE;" disabled="disabled" required>
+            <option value="0">足球</option>
+            <option value="1">羽毛球</option>
+            <option value="2">篮球</option>
+            <option value="3">乒乓球</option>
+        </select><br>
+        <span class="span_text">活动次数：</span><input type="text" onfocus="this.blur();" name="activityTimes" th:value="*{activityTimes}" required><br>
+        <span class="span_text">会员数量：</span><input type="text" onchange="checkMemberNumber(this)" name="memberNumber" th:value="*{memberNumber}" required><br>
+        <span class="span_text" style="float:left">备注：</span><textarea type="text" onfocus="this.blur();" name="remarks" th:text="*{remarks}"></textarea><br>
+
+        <div class="btn">
+            <button type="reset" value="取消">取消</button>
+            <button type="submit" value="保存">保存</button>
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>

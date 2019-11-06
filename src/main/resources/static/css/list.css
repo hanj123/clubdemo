@@ -1,0 +1,38 @@
+body{
+    text-align:center;
+}
+
+
+#div_table{
+    margin:0 auto;
+    width:70%;
+    height:100%;
+}
+
+
+#list_table{
+    border: black solid 2px;
+    border-collapse:collapse
+}
+
+td{
+    border:2px solid #000;
+}
+
+a{
+    display:inline-block;
+    width:50px;
+    height:25px;
+    border:1px solid dodgerblue;
+    color:#fff;
+    background:dodgerblue;
+    border-radius:3px;
+    text-align:center;
+    line-height:30px;
+    text-decoration:none
+}
+
+a:hover{
+    color:black;
+    background:#fff;
+}
