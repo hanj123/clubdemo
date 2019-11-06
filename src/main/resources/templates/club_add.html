@@ -15,7 +15,7 @@
 
 <div id="div_add_from">
     <form action="#" th:action="@{/add}" method="post">
-        <span class="span_text">俱乐部名称：</span><input type="text" name="clubName" required><br>
+        <span class="span_text">俱乐部名称：</span><input type="text" onchange="checkClubName(this)" name="clubName" required><br>
         <span class="span_text">负责人： </span><input type="text" name="clubPerson" required><br>
         <span class="span_text">创建时间：</span><input type="text" id="createTimeStr" name="createTimeStr" required><br>
         <span class="span_text">俱乐部类型：</span>
@@ -25,12 +25,12 @@
             <option value="2">篮球</option>
             <option value="3">乒乓球</option>
         </select><br>
-        <span class="span_text">活动次数：</span><input type="text" onkeyup="value=value.replace(/^(0+)|[^\d]+/g,'')" name="activityTimes" required><br>
-        <span class="span_text">会员数量：</span><input type="text" onkeyup="value=value.replace(/^(0+)|[^\d]+/g,'')" name="memberNumber" required><br>
+        <span class="span_text">活动次数：</span><input type="text" onchange="checkActivityTimes(this)" name="activityTimes" required><br>
+        <span class="span_text">会员数量：</span><input type="text" onchange="checkMemberNumber(this)" name="memberNumber" required><br>
         <span class="span_text" style="float:left">备注：</span><textarea type="text" name="remarks"></textarea><br>
 
         <div class="btn">
-            <button type="reset" onclick="window.location.href='localhost:8080/'" value="取消">取消</button>
+            <button type="button" onclick="window.history.go(-1)" value="取消">取消</button>
             <button type="submit" value="保存">保存</button>
         </div>
 
